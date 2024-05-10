@@ -12,6 +12,12 @@ function Home() {
     e.preventDefault();
     productService.uploadProductImage(image).then((response) => {
       console.log("imagen subida");
+      console.log(response)
+
+      productService.getProductURL(response.ref).then((r) => {
+        console.log("llegó url")
+        console.log(r)
+      })
     })
   }
 
